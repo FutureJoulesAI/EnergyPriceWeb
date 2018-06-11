@@ -1,9 +1,13 @@
 #!/usr/bin/python
 
 import sys
+import urllib2
 
 def testFunc():
-    #print("This worked")
+    req = urllib2.Request('http://google.com')
+    res = urllib2.urlopen(req)
+    html = res.read()
+    print(html)
     return "This worked"
 
 def main():
